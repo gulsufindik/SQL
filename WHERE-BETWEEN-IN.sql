@@ -1,3 +1,4 @@
+--DVD Rental Sample Database--
 SELECT title, length FROM film
 WHERE length >= 90 AND length <= 120;
 
@@ -21,4 +22,3 @@ WHERE replacement_cost IN (10.99,12.99,16.99);
 
 SELECT * FROM film
 WHERE replacement_cost NOT IN (10.99,12.99,16.99);
-
