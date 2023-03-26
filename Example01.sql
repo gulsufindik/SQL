@@ -1,24 +1,13 @@
-SELECT title, length FROM film
-WHERE length >= 90 AND length <= 120;
+SELECT title,description FROM film;
 
-SELECT title, length FROM film
-WHERE length BETWEEN 90 AND 120;
+SELECT * FROM film 
+WHERE length>60 AND length <75;
 
-SELECT title, length FROM film
-WHERE length NOT BETWEEN 90 AND 120;
+SELECT * FROM film 
+WHERE rental_rate = 0.99 AND replacement_cost = 12.99 OR replacement_cost = 28.99;
 
-SELECT title, length FROM film
-WHERE length < 90 OR length > 120;
-
-SELECT rental_rate, replacement_cost FROM film
-WHERE (rental_rate BETWEEN 2 AND 4) AND (replacement_cost BETWEEN 10 AND 20);
+SELECT last_name FROM customer
+WHERE first_name = 'Mary';
 
 SELECT * FROM film
-WHERE length IN (40,50,60);
-
-SELECT * FROM film
-WHERE replacement_cost IN (10.99,12.99,16.99);
-
-SELECT * FROM film
-WHERE replacement_cost NOT IN (10.99,12.99,16.99);
-
+WHERE NOT(length >50 AND rental_rate = 2.99 OR rental_rate = 4.99);
