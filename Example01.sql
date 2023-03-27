@@ -1,3 +1,4 @@
+--DVD Rental Sample Database--
 SELECT title,description FROM film;
 
 SELECT * FROM film 
