@@ -1,3 +1,7 @@
+--CREATE TABLE <table_name> (
+--	<column_name> <data_type> <constaint>,
+--	<column_name> <data_type> <constaint>; )	
+
 CREATE TABLE author (
 	id SERIAL PRIMARY KEY,
 	first_name VARCHAR(50) NOT NULL,
