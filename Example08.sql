@@ -1,9 +1,12 @@
+-- "employee" adında yeni bir tablo oluştur ve sütunları tanımla
 CREATE TABLE employee (
-	id INTEGER,
-	name VARCHAR(50),
-	birthday DATE,
-	email VARCHAR(100) );
---
+    id INTEGER,
+    name VARCHAR(50),
+    birthday DATE,
+    email VARCHAR(100)
+);
+
+-- Yeni çalışan kayıtlarını "employee" tablosuna ekle
 insert into employee (id, name, birthday, email) values (1, 'Minnaminnie', '2022/11/06', 'mainger0@diigo.com');
 insert into employee (id, name, birthday, email) values (2, 'Leia', '2023/01/07', 'lhugenin1@ow.ly');
 insert into employee (id, name, birthday, email) values (3, 'Bourke', '2022/12/28', 'biddens2@princeton.edu');
@@ -55,40 +58,50 @@ insert into employee (id, name, birthday, email) values (48, 'Louisette', '2022/
 insert into employee (id, name, birthday, email) values (49, 'Alejoa', '2022/08/25', 'alamyman1c@businessweek.com');
 insert into employee (id, name, birthday, email) values (50, 'Selene', '2022/10/12', 'schillistone1d@amazon.com');
 --
+-- ID'si 1 olan çalışanın adını ve e-postasını güncelle
 UPDATE employee
 SET name = 'Gülsu', email = 'findik.gulsu@gmail.com'
 WHERE id = 1;
-—
+
+-- 's' veya 'I' harfi ile başlayan e-postaların başındaki harfi düzelt
 UPDATE employee
 SET email = 'findik@gulsu.com'
 WHERE email LIKE 's%' OR email LIKE 'I%';
-—
+
+-- E-postası 'm' harfi ile başlayan çalışanların e-postalarını düzelt
 UPDATE employee
 SET email = 'findik@gulsu.com'
 WHERE email LIKE 'm%';
-—
+
+-- İsmi 'Leia' olan çalışanın doğum tarihini '1111-11-11' olarak güncelle
 UPDATE employee
 SET birthday = '1111-11-11'
 WHERE name = 'Leia'
 RETURNING *;
-—
+
+-- İsmi 'Jenda' olan çalışanın adını 'OH MY GOD !' olarak güncelle
 UPDATE employee
 SET name = 'OH MY GOD !'
 WHERE name = 'Jenda'
 RETURNING *;
-—
+
+-- ID'si 6 olan çalışanı sil
 DELETE FROM employee
 WHERE id = 6;
-—
+
+-- Belirli ID'leri içeren çalışanları sil
 DELETE FROM employee
 WHERE id IN(3,38,42);
-—
+
+-- ID'si 11'den büyük olan çalışanları sil ve silinenleri döndür
 DELETE FROM employee
 WHERE id > 11
 RETURNING *;
-—
+
+-- İsmi 'Alejoa' olan çalışanı sil
 DELETE FROM employee
 WHERE name = 'Alejoa';
-—
+
+-- İsmi 'OH MY GOD !' olan çalışanı sil
 DELETE FROM employee
 WHERE name = 'OH MY GOD !';
